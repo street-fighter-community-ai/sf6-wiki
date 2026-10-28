@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+
+# Build / VitePress
+dist/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+.output/
+.temp/
+coverage/
+
+# Local wiki API dumps & scrape scratch (not needed in Git — docs/characters is the published output)
+.cache/
+hub.json
+hub-parse.html
+missing.json
+ryu-*.html
+edge-profile/
+wiki/
+
+# One-off local helper scripts (bridge / JSONP ingest / probes)
+_bridge.mjs
+_bulk-ingest-agent-tools.mjs
+_cache-status.mjs
+_ingest-jsonp.mjs
+_make-fixtures.mjs
+_missing-urls.mjs
+_probe.mjs
+_probe-*.mjs
+
+# Optional local image downloads (site hotlinks srk.shib.live by default)
+docs/public/characters/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Logs & caches
+*.log
+*.tgz
+.eslintcache
+.vite/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# TypeScript
+*.tsbuildinfo

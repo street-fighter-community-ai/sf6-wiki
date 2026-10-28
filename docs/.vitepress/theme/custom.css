@@ -1,0 +1,526 @@
+:root {
+  /* Shared brand accents (SF6) */
+  --accent: #e10600;
+  --accent-2: #0891b2;
+  --accent-3: #c9a012;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --scrollbar-thumb: #c8c8d0;
+
+  /* Light theme */
+  --bg: #f5f5f7;
+  --bg-elevated: #ffffff;
+  --bg-mute: #ebebef;
+  --border: #d8d8e0;
+  --text: #1a1a22;
+  --text-mute: #5c5c6a;
+
+  --vp-c-bg: var(--bg);
+  --vp-c-bg-alt: var(--bg-elevated);
+  --vp-c-bg-elv: var(--bg-elevated);
+  --vp-c-bg-soft: var(--bg-mute);
+  --vp-c-bg-mute: var(--bg-mute);
+
+  --vp-c-border: var(--border);
+  --vp-c-divider: var(--border);
+  --vp-c-gutter: var(--border);
+
+  --vp-c-text-1: var(--text);
+  --vp-c-text-2: var(--text-mute);
+  --vp-c-text-3: var(--text-mute);
+
+  --vp-c-brand-1: var(--accent);
+  --vp-c-brand-2: #ff2a1f;
+  --vp-c-brand-3: #b00500;
+  --vp-c-brand-soft: rgba(225, 6, 0, 0.1);
+
+  --vp-sidebar-bg-color: var(--bg-elevated);
+  --vp-nav-bg-color: rgba(245, 245, 247, 0.88);
+
+  --vp-c-default-1: var(--bg-mute);
+  --vp-c-default-2: var(--bg-elevated);
+  --vp-c-default-3: var(--border);
+  --vp-c-default-soft: var(--bg-mute);
+
+  --vp-code-bg: var(--bg-mute);
+  --vp-code-color: var(--text);
+
+  --vp-button-brand-bg: var(--accent);
+  --vp-button-brand-hover-bg: #ff2a1f;
+  --vp-button-brand-active-bg: #b00500;
+  --vp-button-brand-text: #fff;
+
+  color-scheme: light;
+}
+
+html.dark {
+  --accent-2: #3de7ff;
+  --accent-3: #f5c518;
+  --scrollbar-thumb: #3a3a46;
+
+  --bg: #0b0b0f;
+  --bg-elevated: #14141a;
+  --bg-mute: #1c1c24;
+  --border: #2a2a33;
+  --text: #ececf1;
+  --text-mute: #9b9ba8;
+
+  --vp-c-bg: var(--bg);
+  --vp-c-bg-alt: var(--bg-elevated);
+  --vp-c-bg-elv: var(--bg-elevated);
+  --vp-c-bg-soft: var(--bg-elevated);
+  --vp-c-bg-mute: var(--bg-mute);
+
+  --vp-c-border: var(--border);
+  --vp-c-divider: var(--border);
+  --vp-c-gutter: var(--border);
+
+  --vp-c-text-1: var(--text);
+  --vp-c-text-2: var(--text-mute);
+  --vp-c-text-3: var(--text-mute);
+
+  --vp-c-brand-1: var(--accent);
+  --vp-c-brand-2: #ff2a1f;
+  --vp-c-brand-3: #b00500;
+  --vp-c-brand-soft: rgba(225, 6, 0, 0.14);
+
+  --vp-sidebar-bg-color: var(--bg-elevated);
+  --vp-nav-bg-color: rgba(11, 11, 15, 0.85);
+
+  --vp-c-default-1: var(--bg-mute);
+  --vp-c-default-2: var(--bg-elevated);
+  --vp-c-default-3: var(--border);
+  --vp-c-default-soft: var(--bg-mute);
+
+  --vp-code-bg: var(--bg-mute);
+  --vp-code-color: var(--text);
+
+  color-scheme: dark;
+}
+
+.VPContent a:visited {
+  color: inherit;
+}
+
+.VPContent a:hover {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.vp-doc table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+}
+
+.vp-doc thead th {
+  background: var(--bg-mute);
+  border-bottom: 1px solid rgba(225, 6, 0, 0.35);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.vp-doc tbody tr:nth-child(even) {
+  background: var(--bg-elevated);
+}
+
+.vp-doc tbody tr:nth-child(odd) {
+  background: var(--bg);
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.65rem;
+}
+
+.vp-doc td:first-child,
+.vp-doc code {
+  font-family: ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+.vp-doc img {
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+}
+
+/*
+ * Hitbox toggle (mutually exclusive):
+ * - off (default): move art only
+ * - on (.sf6-show-hitboxes): hitbox art only
+ */
+.vp-doc img[src*='hitbox' i],
+.vp-doc img[src*='_hitbox'],
+.vp-doc .sf6-move__img[data-kind='hitbox'] {
+  display: none !important;
+}
+
+.vp-doc p:has(> img[src*='hitbox' i]:only-child),
+.vp-doc p:has(> img[src*='_hitbox']:only-child) {
+  display: none !important;
+  margin: 0 !important;
+}
+
+html.sf6-show-hitboxes .vp-doc img[src*='hitbox' i],
+html.sf6-show-hitboxes .vp-doc img[src*='_hitbox'],
+html.sf6-show-hitboxes .vp-doc .sf6-move__img[data-kind='hitbox'] {
+  display: block !important;
+}
+
+html.sf6-show-hitboxes .vp-doc p:has(> img[src*='hitbox' i]:only-child),
+html.sf6-show-hitboxes .vp-doc p:has(> img[src*='_hitbox']:only-child) {
+  display: block !important;
+  margin: inherit;
+}
+
+html.sf6-show-hitboxes .vp-doc img:not([src*='hitbox' i]):not([src*='_hitbox']):not(.sf6-move__img),
+html.sf6-show-hitboxes .vp-doc .sf6-move__img[data-kind='move'],
+html.sf6-show-hitboxes .vp-doc .sf6-move-portrait {
+  display: none !important;
+}
+
+html.sf6-show-hitboxes .vp-doc p:has(> img:not([src*='hitbox' i]):not([src*='_hitbox']):only-child) {
+  display: none !important;
+  margin: 0 !important;
+}
+
+/* SuperCombo-like move card: image column | frame data + notes */
+.sf6-move-portrait {
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+.sf6-move-portrait img {
+  max-height: 280px;
+  width: auto;
+}
+
+.sf6-move {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+  margin: 0 0 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  overflow: hidden;
+}
+
+.sf6-move__media {
+  flex: 1 1 360px;
+  max-width: 520px;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg);
+}
+
+.sf6-move__title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.sf6-move__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.8rem;
+  color: var(--text-mute);
+}
+
+.sf6-move__input-label {
+  color: var(--text-mute);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 0.25rem;
+}
+
+.sf6-move__images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.sf6-move__img {
+  max-width: 100%;
+  width: min(100%, 400px);
+  height: auto;
+  max-height: 400px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+}
+
+/* Light theme: white media column so white-backed wiki sprites blend in (no image filters) */
+html:not(.dark) .sf6-move__media {
+  background: #ffffff;
+}
+
+html:not(.dark) .sf6-move__img,
+html:not(.dark) .sf6-move-portrait img {
+  mix-blend-mode: normal;
+  background: transparent;
+}
+
+.sf6-move__info {
+  flex: 1000 1 300px;
+  min-width: 0;
+  padding: 0.65rem 0.75rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.sf6-move__notation {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg-mute);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.sf6-move__subtitle {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--text-mute);
+}
+
+.sf6-move__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.sf6-move__table {
+  display: table !important;
+  width: 100%;
+  margin: 0 !important;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.sf6-move__table th,
+.sf6-move__table td {
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.45rem;
+  text-align: center;
+}
+
+.sf6-move__table th {
+  background: var(--bg-mute);
+  font-weight: 600;
+}
+
+.sf6-move__notes {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.sf6-move__notes li {
+  margin: 0.2rem 0;
+}
+
+.sf6-move__desc {
+  margin: 0 !important;
+  color: var(--text-mute);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 700px) {
+  .sf6-move__media {
+    max-width: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* Keep ### for TOC anchors, hide the visible duplicate above each card */
+.vp-doc h3:has(+ .sf6-move) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.vp-doc h3 + .sf6-move {
+  margin-top: 0;
+}
+
+.vp-doc .custom-block {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  box-shadow: none;
+}
+
+/* Themed scrollbars (page + overflow tables / sidebar) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--bg-elevated);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--bg-elevated);
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(225, 6, 0, 0.55);
+  border: 2px solid var(--bg-elevated);
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-corner {
+  background: var(--bg-elevated);
+}
+
+/*
+ * Full-bleed doc layout:
+ * - left nav flush left
+ * - "On this page" flush right
+ * - main content uses the remaining middle width
+ */
+:root {
+  /* Full viewport — kills VitePress’s centered 1440px “page column” */
+  --vp-layout-max-width: 100vw;
+  --vp-sidebar-width: 280px;
+}
+
+@media (min-width: 1440px) {
+  .VPSidebar {
+    padding-left: 24px !important;
+    width: var(--vp-sidebar-width) !important;
+  }
+
+  .VPContent.has-sidebar {
+    padding-left: var(--vp-sidebar-width) !important;
+    padding-right: 0 !important;
+  }
+
+  .VPNavBar.has-sidebar .title {
+    padding-left: 24px !important;
+    width: var(--vp-sidebar-width) !important;
+  }
+
+  .VPNavBar.has-sidebar .content {
+    padding-left: var(--vp-sidebar-width) !important;
+    padding-right: 32px !important;
+  }
+
+  .VPLocalNav.has-sidebar {
+    padding-left: var(--vp-sidebar-width) !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .VPDoc.has-sidebar .container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    gap: 1.25rem;
+  }
+
+  .VPDoc.has-sidebar .content {
+    flex: 1 1 auto !important;
+    order: 1 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .VPDoc.has-aside .content-container,
+  .VPDoc.has-sidebar .content > .content-container {
+    width: 100% !important;
+    max-width: min(1680px, calc(100vw - var(--vp-sidebar-width) - 248px - 2rem)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .VPDoc .aside {
+    flex: 0 0 224px !important;
+    order: 2 !important;
+    max-width: 224px !important;
+    width: 224px !important;
+    padding-left: 0.75rem !important;
+    padding-right: 1rem !important;
+    margin-left: auto !important;
+  }
+
+  .VPDoc .aside-container,
+  .VPDoc .aside-curtain {
+    right: 1rem;
+  }
+}
+
+/* Hitbox toggle sits immediately after the theme switch, with a clear gap */
+.VPNavBar .content-body .appearance {
+  order: 40;
+}
+
+.VPNavBar .content-body .sf6-hitbox-toggle {
+  order: 41;
+  margin-left: 14px;
+  margin-right: 10px;
+}
+
+.VPNavBar .content-body .social-links {
+  order: 50;
+}
+
+.VPNavBar .content-body .extra {
+  order: 60;
+}
+
+.VPNavBar .content-body .hamburger {
+  order: 70;
+}
