@@ -5,40 +5,46 @@ description: Tags, roles e objetivos padronizados para drills gerados por IA.
 
 # Taxonomia de drills
 
-Use estas tags em `meta.tags` e, se útil, no `label` de cada slot. Assim humanos e agentes filtram a [biblioteca](/ia-training/biblioteca).
+Use estas tags **somente** em `meta.tags` (e, se útil, no texto do `label`). Assim humanos e agentes filtram a [biblioteca](/ia-training/biblioteca).
+
+::: danger Tags ≠ inputs
+`anti_air`, `punish`, `blockstring` descrevem o **objetivo do treino humano**.  
+**Não** viram `action: anti_air` / `action: punish` nos `steps`.  
+Os `steps` / `sequence` continuam sendo **golpes do dummy** (`236MK~K`, `5HK`, …). Ver [Contrato — Regra #1](/ia-training/contrato#regra-1-ler-antes-de-tudo).
+:::
 
 ## Role (obrigatório conceitualmente)
 
 Quem a gravação representa no Training Mode:
 
-| Tag | Significado |
-|-----|-------------|
-| `role:dummy` | Dummy pressiona / ataca (você treina defesa ou anti-air) |
-| `role:player` | Você é o ofensor; dummy está passivo/bloqueando (treino de timing ofensivo) |
-| `role:both` | Mix aleatório onde às vezes o dummy “joga” opções de mix |
+| Tag | Significado | O que vai nos slots |
+|-----|-------------|---------------------|
+| `role:dummy` | Dummy pressiona / ataca (você treina defesa ou anti-air) | Ataques do oponente |
+| `role:player` | Você é o ofensor; dummy está passivo/bloqueando (lab de timing ofensivo) | Sua rota / BnB |
+| `role:both` | Mix aleatório de opções ofensivas do dummy | Variações de ataque do dummy |
 
-Default recomendado para strings de pressão do oponente: **`role:dummy`**.
+Default para “treino defensivo vs X”: **`role:dummy`** + `character: X`.
 
 ## Objetivo (escolha 1 primário)
 
-| Tag | Quando usar |
-|-----|-------------|
-| `blockstring` | Sequência que deve ser **bloqueada**; treina respeito / DI / mash window |
-| `hitconfirm` | Rota que só continua no **hit**; no block deve parar ou ser outra opção |
-| `frametrap` | Gap intencional para punir mash |
-| `tick_throw` | Normal → delay → throw |
-| `oki` | Após knockdown: meaty / throw / shimmy / left-right |
-| `meaty` | Ataque que invade frames de wake-up |
-| `shimmy` | Walk back + punish throw attempt |
-| `anti_air` | Dummy pula; você anti-air |
-| `whiff_punish` | Dummy whiffa poke; você pune |
-| `drive_steal` | Foco em quebrar / roubar Drive (chip, OD, etc.) |
-| `anti_di` | Opções que batem Drive Impact / compensam DI |
-| `punish` | Punir unsafe on block (ex.: −4 ou pior) |
-| `mixup` | High/low/throw/overhead como slots ponderados |
-| `convert` | Confirmar hit em BnB |
-| `safe_jump` | Setup de safe jump pós KD |
-| `install` | Depende de poison / burn / level / install do personagem |
+| Tag | Quando usar | Conteúdo típico dos slots |
+|-----|-------------|---------------------------|
+| `blockstring` | Você pratica block / respeito / DI | String de pressão do dummy |
+| `hitconfirm` | Lab de confirm no hit | Rota que só continua no hit |
+| `frametrap` | Gap intencional vs mash | Normal → wait → normal do dummy |
+| `tick_throw` | Normal → delay → throw | Inputs do ofensor (dummy ou player conforme role) |
+| `oki` | Pós-KD: meaty / throw / shimmy | Opções de oki do ofensor |
+| `meaty` | Invade frames de wake-up | Meaty do ofensor |
+| `shimmy` | Walk back + punish throw | Walk + botão do ofensor |
+| `anti_air` | Você pratica AA | **Dummy pula / air move** (não “action anti_air”) |
+| `whiff_punish` | Você pune whiff | Dummy whiffa poke (hold/recovery longo) |
+| `drive_steal` | Chip / OD / Drive | Ataques que drenam Drive |
+| `anti_di` | Vs Drive Impact | Opções que batem / evitam DI |
+| `punish` | Você pune unsafe | Dummy faz o golpe **unsafe**; description diz o punish |
+| `mixup` | High/low/throw | Enders diferentes em slots separados |
+| `convert` | Confirm em BnB | BnB do ofensor |
+| `safe_jump` | Setup de safe jump | KD + jump setup do ofensor |
+| `install` | Estado especial | Rotas que precisam do install |
 
 ## Contexto extra (opcional)
 

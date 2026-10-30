@@ -16,6 +16,7 @@ Cada exemplo está versionado em [`/ia-training/examples/*.yml`](/ia-training/ex
 | Pressão / confirms clássicos | [ryu-hadoken-pressure.yml](/ia-training/examples/ryu-hadoken-pressure.yml) | Ryu |
 | Mix de enders (slots, não `/`) | [sagat-tiger-nexus-defense.yml](/ia-training/examples/sagat-tiger-nexus-defense.yml) | Sagat |
 | Template oki meaty/throw/shimmy | [generic-oki-meaty.yml](/ia-training/examples/generic-oki-meaty.yml) | Ryu (template) |
+| Defesa vs Demon Flip (dummy ataca) | [akuma-demon-flip-defense.yml](/ia-training/examples/akuma-demon-flip-defense.yml) | Akuma |
 
 ## Mini A.K.I. 5HK (referência inline)
 

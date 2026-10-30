@@ -1,0 +1,54 @@
+schema: sf6-drill/v1
+
+meta:
+  title: Defesa vs Akuma Demon Flip (Demon Raid)
+  author: sf6-wiki
+  tags:
+    - akuma
+    - role:dummy
+    - mixup
+    - blockstring
+    - anti_air
+    - intermediate
+  description: |
+    Dummy = Akuma. Player pratica stand block (overhead ~P), crouch block (low ~K / empty)
+    e reação a air follow-ups. NÃO grava block/punish do player — só enders 236K~.
+    Fonte: /characters/akuma/frame-data (236K~P overhead, 236K~K / empty low).
+    Calibrar strengths (LK/MK/HK) e gaps no Training Mode.
+
+character: Akuma
+
+training:
+  stage: center
+  playback: random
+  player_drive: full
+  dummy_drive: full
+  player_super: full
+  dummy_super: full
+
+defaults:
+  button_hold: 3f
+  motion_step: 2f
+  followup_gap: 4f
+  end_idle: 36f
+
+slots:
+  - id: 1
+    label: Demon Raid ~P (overhead)
+    weight: 3
+    sequence: "236MK~P"
+
+  - id: 2
+    label: Demon Raid ~K (crossup/low mix)
+    weight: 3
+    sequence: "236MK~K"
+
+  - id: 3
+    label: Demon Raid empty (low)
+    weight: 2
+    sequence: "236MK"
+
+  - id: 4
+    label: OD Demon Raid ~P
+    weight: 1
+    sequence: "236KK~P"

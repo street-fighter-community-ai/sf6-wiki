@@ -46,6 +46,9 @@ character: Sagat   # dummy character id no Training Mode
 
 Importante: `character:` no YAML é o **dummy** do Training Mode (quem está gravado), não necessariamente o personagem que *você* joga. Deixe isso explícito na `description`.
 
+“Treino defensivo vs Akuma” ⇒ `character: Akuma` + slots com **Demon Flip / pokes do Akuma**.  
+Não grave `block` / `punish` / `anti_air` como steps — isso o humano faz no controle. Ver [Contrato — Regra #1](/ia-training/contrato#regra-1-ler-antes-de-tudo).
+
 ## Checklist matchup
 
 - [ ] Leu matchup do **seu** personagem

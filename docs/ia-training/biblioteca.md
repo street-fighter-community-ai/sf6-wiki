@@ -16,6 +16,7 @@ Arquivos em `docs/public/ia-training/examples/` — publicados na raiz do site c
 | `ryu-hadoken-pressure` | [ryu-hadoken-pressure.yml](/ia-training/examples/ryu-hadoken-pressure.yml) | `blockstring`, `convert`, `beginner` |
 | `sagat-tiger-nexus-defense` | [sagat-tiger-nexus-defense.yml](/ia-training/examples/sagat-tiger-nexus-defense.yml) | `blockstring`, `mixup`, `corner` |
 | `generic-oki-meaty` | [generic-oki-meaty.yml](/ia-training/examples/generic-oki-meaty.yml) | `oki`, `meaty`, `shimmy`, `advanced` |
+| `akuma-demon-flip-defense` | [akuma-demon-flip-defense.yml](/ia-training/examples/akuma-demon-flip-defense.yml) | `role:dummy`, `mixup`, `blockstring`, `anti_air` |
 
 ## Convenção de novos arquivos
 
