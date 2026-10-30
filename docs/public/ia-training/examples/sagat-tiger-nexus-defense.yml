@@ -1,0 +1,55 @@
+schema: sf6-drill/v1
+
+meta:
+  title: Sagat Tiger Nexus defense mix
+  author: sf6-wiki
+  tags:
+    - sagat
+    - role:dummy
+    - blockstring
+    - mixup
+    - corner
+    - intermediate
+  description: |
+    Gold example. Dummy pressão estilo Nexus/Jinrai com enders em slots separados
+    (nunca 236LK/236HK numa sequence). Pesos favorecem a string principal.
+    Fonte: /characters/sagat/combos e strategy. Calibrar follow-ups no jogo.
+
+character: Sagat
+
+training:
+  stage: left_corner
+  playback: random
+  player_drive: full
+  dummy_drive: full
+
+defaults:
+  cancel_gap: 6f
+  followup_gap: 4f
+  motion_step: 2f
+  end_idle: 34f
+
+slots:
+  - id: 1
+    label: Nexus into LK ender
+    weight: 3
+    sequence: "2MK > 236LK"
+
+  - id: 2
+    label: Nexus into HK ender
+    weight: 2
+    sequence: "2MK > 236HK"
+
+  - id: 3
+    label: Medium confirm fireball
+    weight: 2
+    sequence: "5MK > 236HP"
+
+  - id: 4
+    label: Throw mix after poke
+    weight: 1
+    steps:
+      - move: 5MK
+      - wait: 5f
+      - move: throw
+      - wait: 40f

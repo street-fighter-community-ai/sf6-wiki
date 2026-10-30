@@ -13,11 +13,69 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'IA Training', link: '/ia-training/' },
       { text: 'Mods', link: '/mods/' },
       { text: 'Characters', link: '/characters/ryu/overview' },
     ],
     sidebar: /* AUTO-SIDEBAR */
 [
+  {
+    "text": "IA Training",
+    "items": [
+      {
+        "text": "Overview",
+        "link": "/ia-training/"
+      },
+      {
+        "text": "Contrato para a IA",
+        "link": "/ia-training/contrato"
+      },
+      {
+        "text": "Taxonomia",
+        "link": "/ia-training/taxonomia"
+      },
+      {
+        "text": "Léxico de notação",
+        "link": "/ia-training/notacao"
+      },
+      {
+        "text": "Timings",
+        "link": "/ia-training/timings"
+      },
+      {
+        "text": "Contexto de treino",
+        "link": "/ia-training/contexto"
+      },
+      {
+        "text": "Slots vs alternativas",
+        "link": "/ia-training/slots"
+      },
+      {
+        "text": "Oki e advantage",
+        "link": "/ia-training/oki"
+      },
+      {
+        "text": "Blockstrings",
+        "link": "/ia-training/blockstrings"
+      },
+      {
+        "text": "Limitações",
+        "link": "/ia-training/limitacoes"
+      },
+      {
+        "text": "Exemplos gold",
+        "link": "/ia-training/exemplos"
+      },
+      {
+        "text": "Biblioteca",
+        "link": "/ia-training/biblioteca"
+      },
+      {
+        "text": "Drills de matchup",
+        "link": "/ia-training/matchups"
+      }
+    ]
+  },
   {
     "text": "Mods",
     "items": [
@@ -32,6 +90,14 @@ export default defineConfig({
       {
         "text": "Como montar o JSON",
         "link": "/mods/montar-json"
+      },
+      {
+        "text": "Drill YAML",
+        "link": "/mods/drill-yaml"
+      },
+      {
+        "text": "Drill Builder",
+        "link": "/mods/drill-builder"
       }
     ]
   },

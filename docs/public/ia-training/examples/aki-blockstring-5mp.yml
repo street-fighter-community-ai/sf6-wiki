@@ -1,0 +1,46 @@
+schema: sf6-drill/v1
+
+meta:
+  title: A.K.I. 5MP pressure vs confirm
+  author: sf6-wiki
+  tags:
+    - aki
+    - role:dummy
+    - blockstring
+    - frametrap
+    - convert
+    - midscreen
+    - intermediate
+  description: |
+    Gold example. Separa pressão no block (sem ender −16) do confirm no hit.
+    Wiki: 5MP/2MP > 214LP~6P é frametrap; ~6P fica −16 on block.
+    Fonte: /characters/a.k.i/combos
+
+character: A.K.I.
+
+training:
+  stage: center
+  playback: random
+  player_drive: full
+  dummy_drive: full
+
+defaults:
+  cancel_gap: 7f
+  followup_gap: 4f
+  end_idle: 30f
+
+slots:
+  - id: 1
+    label: Block pressure stop at 214LP
+    weight: 3
+    sequence: "5MP > 214LP"
+
+  - id: 2
+    label: Hit confirm into 6P
+    weight: 2
+    sequence: "5MP > 214LP~6P"
+
+  - id: 3
+    label: 2MP starter same idea
+    weight: 2
+    sequence: "2MP > 214LP"

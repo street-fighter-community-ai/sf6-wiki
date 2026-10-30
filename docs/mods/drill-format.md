@@ -9,6 +9,8 @@ Referência canônica do formato JSON e do código de clipboard (`SF6DRILL:v2:..
 
 Para um guia **campo a campo** (o que cada chave significa e como montar `raw_inputs`), veja [Como montar o JSON](/mods/montar-json).
 
+Para escrever drills em notação legível e gerar o JSON no navegador: [Drill YAML](/mods/drill-yaml) e [Drill Builder](/mods/drill-builder).
+
 Fonte: mod REFramework **SF6 Training Drill Share** (`docs/DRILL_FORMAT.md` no autorun do mod).
 
 Há **duas versões independentes**:

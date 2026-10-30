@@ -77,6 +77,8 @@ pnpm typecheck
 | `scraper/` | CLI + parsers (pure HTML → typed data) |
 | `docs/characters/` | Generated Markdown (do not hand-edit) |
 | `docs/public/characters/` | Generated images |
+| `docs/ia-training/` | Guide for AI agents generating drill YAML |
+| `docs/public/ia-training/examples/` | Gold `sf6-drill/v1` YAML samples |
 | `AGENTS.md` | Agent / contributor constraints |
 
 ## History

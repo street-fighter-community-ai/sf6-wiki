@@ -1,0 +1,55 @@
+schema: sf6-drill/v1
+
+meta:
+  title: A.K.I. 5HK routes
+  author: sf6-wiki
+  tags:
+    - aki
+    - role:dummy
+    - blockstring
+    - convert
+    - tick_throw
+    - corner
+    - intermediate
+  description: |
+    Gold example. Dummy pressão a partir de 5HK: BnB, serpent cancel, tick throw.
+    Fonte: /characters/a.k.i/combos
+    Calibrar gaps no Training Mode se o cancel falhar.
+
+character: A.K.I.
+
+training:
+  stage: left_corner
+  playback: random
+  player_drive: full
+  dummy_drive: full
+  player_super: full
+  dummy_super: full
+
+defaults:
+  button_hold: 3f
+  motion_step: 2f
+  cancel_gap: 7f
+  link_gap: 15f
+  followup_gap: 4f
+  end_idle: 28f
+
+slots:
+  - id: 1
+    label: BnB 5HK > 2PP~K
+    weight: 3
+    sequence: "5HK > 2PP~K, 2LP > 2LP > 236HP"
+
+  - id: 2
+    label: Serpent cancel 214LP~6P
+    weight: 2
+    sequence: "5HK > 214LP~6P"
+
+  - id: 3
+    label: Tick throw
+    weight: 1
+    steps:
+      - move: 5HK
+      - wait: 4f
+      - move: throw
+      - wait: 40f

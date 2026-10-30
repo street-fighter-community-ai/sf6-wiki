@@ -1,0 +1,50 @@
+schema: sf6-drill/v1
+
+meta:
+  title: Ryu fireball + confirm pressure
+  author: sf6-wiki
+  tags:
+    - ryu
+    - role:dummy
+    - blockstring
+    - convert
+    - midscreen
+    - beginner
+  description: |
+    Gold example. Dummy joga hadouken e confirms médios.
+    DR real não é o foco — sem token DR.
+    Fonte: /characters/ryu/combos (rotas clássicas). Calibrar no jogo.
+
+character: Ryu
+
+training:
+  stage: center
+  playback: random
+  player_drive: full
+  dummy_drive: full
+
+defaults:
+  cancel_gap: 6f
+  link_gap: 14f
+  end_idle: 32f
+
+slots:
+  - id: 1
+    label: Standing HK fireball (space)
+    weight: 2
+    sequence: "5HK > 236HP"
+
+  - id: 2
+    label: 5MK confirm HP shoryu
+    weight: 2
+    sequence: "5MK > 236HP"
+
+  - id: 3
+    label: 2MK low confirm
+    weight: 2
+    sequence: "2MK > 236MP"
+
+  - id: 4
+    label: 5HP DP cancel
+    weight: 1
+    sequence: "5HP > 623HP"

@@ -12,5 +12,10 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["scraper/**/*.ts", "docs/.vitepress/**/*.ts", "vitest.config.ts"]
+  "include": [
+    "scraper/**/*.ts",
+    "docs/.vitepress/**/*.ts",
+    "docs/.vitepress/**/*.d.ts",
+    "vitest.config.ts"
+  ]
 }

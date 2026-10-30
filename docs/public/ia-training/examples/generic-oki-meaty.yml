@@ -1,0 +1,61 @@
+schema: sf6-drill/v1
+
+meta:
+  title: Generic oki mix (meaty / throw / shimmy)
+  author: sf6-wiki
+  tags:
+    - role:dummy
+    - oki
+    - meaty
+    - shimmy
+    - tick_throw
+    - corner
+    - advanced
+  description: |
+    Gold template. Troque character + knockdown move (236HP é placeholder).
+    TODO humano: calibrar cada wait: após o KD no Training Mode.
+    Não usar como drill final sem calibração.
+
+character: Ryu
+
+training:
+  stage: left_corner
+  playback: random
+  player_drive: full
+  dummy_drive: full
+
+defaults:
+  button_hold: 4f
+  end_idle: 20f
+
+slots:
+  - id: 1
+    label: Meaty 5HK
+    weight: 3
+    steps:
+      - move: 236HP
+      - wait: 42f
+      - move: 5HK
+        hold: 4f
+      - wait: 24f
+
+  - id: 2
+    label: Throw on wake-up
+    weight: 2
+    steps:
+      - move: 236HP
+      - wait: 45f
+      - move: throw
+      - wait: 40f
+
+  - id: 3
+    label: Shimmy walk-back
+    weight: 1
+    steps:
+      - move: 236HP
+      - wait: 38f
+      - walk: 4
+        frames: 10f
+      - wait: 8f
+      - move: 5HK
+      - wait: 24f
